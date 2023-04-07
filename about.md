@@ -1,9 +1,9 @@
 ---
-title: Awards
+title: Experiences
 layout: page
 cover: assets/img/about.jpg
 
-order: 3
+order: 2
 ---
 
 Hello and welcome to my blog.

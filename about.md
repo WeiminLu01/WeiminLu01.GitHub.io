@@ -1,5 +1,5 @@
 ---
-title: About
+title: Awards
 layout: page
 cover: assets/img/about.jpg
 

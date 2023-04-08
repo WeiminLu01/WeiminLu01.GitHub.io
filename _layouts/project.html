@@ -1,24 +1,15 @@
 ---
 layout: default
 ---
-{%- assign _posts = site.posts | sort: 'date' | reverse -%}
-{%- include header.html scrolly_nav=_posts -%}
+{%- assign _projects = site.proects | sort: 'order' -%}
+{%- include header.html scrolly_nav=_projects -%}
 <!-- Main -->
 <div id="main">
 	{%- if page.content != "" -%}
 		{%- include section.html title=page.title photo=page.cover-photo photo-alt=page.cover-photo-alt auto-header=page.auto-header content=page.content -%}
 	{%- endif -%}
-	<!-- Posts List -->
-	{%- for _post in _projects -%}
-		{%- capture _title -%}
-			<a href="{{- _project.url | absolute_url -}}">{{- _project.title -}}</a>
-		{%- endcapture -%}
-		{%- capture _subtitle -%}
-			{% if _post.projectname -%}{{- _post.projectname }} | {% endif %}
-		{%- endcapture -%}
-		{%- capture _excerpt -%}<p>{{- _post.excerpt | strip_html | truncatewords: 100 -}}</p>{%- endcapture -%}
-		{%- capture _link -%}<a href="{{- _post.url | absolute_url -}}">more details</a>{%- endcapture -%}
-		{%- assign _content = _excerpt | append: _link -%}
-		{%- include section.html title=_title subtitle=_subtitle content=_content -%}
+	<!-- Sections -->
+	{%- for _section in _projects -%}
+		{%- include section.html title=_section.title photo=_section.cover-photo photo-alt=_section.cover-photo-alt auto-header=_section.auto-header content=_section.content -%}
 	{%- endfor -%}
 </div>
